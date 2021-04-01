@@ -12,19 +12,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String playerName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Button startBtn = findViewById(R.id.btnStartGame);
-        startBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showToast("Start game!!!!");
-            }
-        });
-
+        startBtn.setOnClickListener(v -> showToast("Start game!!!!"));
     }
 
     @Override
