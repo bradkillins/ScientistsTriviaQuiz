@@ -6,4 +6,103 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
+    <ImageView
+
+        android:id="@+id/question_imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="443dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/newton_issac"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttons_table"
+        android:contentDescription="@string/qHint_einstein" />
+
+    <TableLayout
+        android:id="@+id/buttons_table"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:stretchColumns="0,1"
+        app:layout_constraintBottom_toTopOf="@id/hint_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TableRow
+            android:id="@+id/row1_buttonTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="16dp">
+
+            <Button
+                android:id="@+id/question1_btn"
+                android:text="@string/subrahamanyan"
+                android:textColor="@color/orange"
+                android:layout_marginHorizontal="16dp"/>
+
+            <Button
+                android:id="@+id/question2_btn"
+                android:text="@string/wernher"
+                android:textColor="@color/orange"
+                android:layout_marginHorizontal="16dp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/row2_buttonTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/question3_btn"
+                android:text="@string/carl"
+                android:textColor="@color/orange"
+                android:layout_marginHorizontal="16dp"/>
+
+            <Button
+                android:id="@+id/question4_btn"
+                android:text="@string/wrong_max"
+                android:textColor="@color/orange"
+                android:layout_marginHorizontal="16dp"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/score_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:textSize="20sp"
+        android:text="Score: 3"/>
+    <TextView
+        android:id="@+id/remaining_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Remaining: 4"
+        android:textSize="20sp"/>
+    <Button
+        android:id="@+id/hint_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/hint"
+        android:textColor="@color/blueDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

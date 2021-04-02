@@ -3,16 +3,17 @@ package com.killins.triviaquiz;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.snackbar.Snackbar;
 
-    private String playerName;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button startBtn = findViewById(R.id.btnStartGame);
-        startBtn.setOnClickListener(v -> showToast("Start game!!!!"));
+        startBtn.setOnClickListener(v -> {
+            EditText playerName = findViewById(R.id.playerName_editText);
+            if (playerName.getText().length() < 1) {
+
+                Snackbar snackbar = Snackbar.make(startBtn, R.string.noPlayerName, Snackbar.LENGTH_LONG);
+                snackbar.setAction(R.string.add, (x -> findViewById(R.id.playerName_editText).requestFocus()));
+                snackbar.setActionTextColor(getResources().getColor(R.color.brightBlue));
+                snackbar.show();
+            }
+            else{
+                startGameActivity(playerName.getText().toString());
+            }
+        });
+
     }
 
     @Override
@@ -36,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case aboutMenuId:
-                showToast("About Menu Item Clicked");
+                startAboutActivity();
                 break;
             case helpMenuId:
-                showToast("Help Menu Item Clicked");
+                startHelpActivity();
                 break;
             default:
         }
@@ -47,11 +61,20 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void startAboutActivity() {
+        Intent aboutIntent = new Intent(this, AboutActivity.class);
+        startActivity(aboutIntent);
+    }
 
+    private void startHelpActivity() {
+        Intent helpIntent = new Intent(this, HelpActivity.class);
+        startActivity(helpIntent);
+    }
 
-    private void showToast(String msg){
-        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
-        toast.show();
+    private void startGameActivity(String playerName) {
+        Intent gameIntent = new Intent(this, GameActivity.class);
+        gameIntent.putExtra("com.killins.triviaquiz.PLAYERNAME", playerName);
+        startActivity(gameIntent);
     }
 
 }
