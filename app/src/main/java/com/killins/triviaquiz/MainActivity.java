@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -21,21 +20,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button startBtn = findViewById(R.id.btnStartGame);
+
+        //Show a snackbar if no input in PlayerName EditText
         startBtn.setOnClickListener(v -> {
             EditText playerName = findViewById(R.id.playerName_editText);
             if (playerName.getText().length() < 1) {
-
                 Snackbar snackbar = Snackbar.make(startBtn, R.string.noPlayerName, Snackbar.LENGTH_LONG);
                 snackbar.setAction(R.string.add, (x -> findViewById(R.id.playerName_editText).requestFocus()));
                 snackbar.setActionTextColor(getResources().getColor(R.color.brightBlue));
                 snackbar.show();
-            }
-            else{
+            } else {
                 startGameActivity(playerName.getText().toString());
             }
         });
 
     }
+
+    //App action toolbar menu:
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -50,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case aboutMenuId:
-                startAboutActivity();
+                Utilities.startAboutActivity(this);
                 break;
             case helpMenuId:
-                startHelpActivity();
+                Utilities.startHelpActivity(this);
                 break;
             default:
         }
@@ -61,16 +62,11 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void startAboutActivity() {
-        Intent aboutIntent = new Intent(this, AboutActivity.class);
-        startActivity(aboutIntent);
-    }
-
-    private void startHelpActivity() {
-        Intent helpIntent = new Intent(this, HelpActivity.class);
-        startActivity(helpIntent);
-    }
-
+    /**
+     * Starts the game activity with putting extras in the intent
+     *
+     * @param playerName - the playerName is put in the extras of the started intent.
+     */
     private void startGameActivity(String playerName) {
         Intent gameIntent = new Intent(this, GameActivity.class);
         gameIntent.putExtra("com.killins.triviaquiz.PLAYERNAME", playerName);

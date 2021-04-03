@@ -39,13 +39,11 @@
             <Button
                 android:id="@+id/question1_btn"
                 android:text="@string/subrahamanyan"
-                android:textColor="@color/orange"
                 android:layout_marginHorizontal="16dp"/>
 
             <Button
                 android:id="@+id/question2_btn"
                 android:text="@string/wernher"
-                android:textColor="@color/orange"
                 android:layout_marginHorizontal="16dp"/>
 
         </TableRow>
@@ -60,13 +58,11 @@
             <Button
                 android:id="@+id/question3_btn"
                 android:text="@string/carl"
-                android:textColor="@color/orange"
                 android:layout_marginHorizontal="16dp"/>
 
             <Button
                 android:id="@+id/question4_btn"
                 android:text="@string/wrong_max"
-                android:textColor="@color/orange"
                 android:layout_marginHorizontal="16dp"/>
         </TableRow>
 
@@ -81,7 +77,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginBottom="24dp"
         android:textSize="20sp"
-        android:text="Score: 3"/>
+        android:text="@string/score_filler"/>
     <TextView
         android:id="@+id/remaining_textView"
         android:layout_width="wrap_content"
@@ -90,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="24dp"
-        android:text="Remaining: 4"
+        android:text="@string/remaining_filler"
         android:textSize="20sp"/>
     <Button
         android:id="@+id/hint_btn"

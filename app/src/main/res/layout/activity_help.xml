@@ -11,10 +11,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Help"
+        android:text="@string/how_to_play"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/helpText_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/help_text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/helpTitle_textView"
+        android:layout_margin="32dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,7 +25,7 @@
     <string name="wrong_matt_harris">Matthew\nHarris</string>
     <string name="wrong_brian">Brian\nCox</string>
     <string name="wrong_luis">Luis\nAlvarez</string>
-    <string name="wrong_aristotle">Aristotle</string>
+    <string name="wrong_aristotle">Aristotle\n </string>
     <string name="wrong_alex">Alexander\nGraham Bell</string>
     <string name="wrong_rachel">Rachel\nCarson</string>
     <string name="wrong_james">James\nChadwick</string>
@@ -60,5 +60,32 @@
     <string name="qHint_newton">For every action, there is an equal and opposite reaction.</string>
     <string name="qHint_shiung">Helped develop the process for separating uranium into uranium-235 and uranium-238.</string>
     <string name="hint">Hint</string>
+    <string name="hint_title">They\'re Famous For</string>
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="right_guessTitle">Nice Job!</string>
+    <string name="wrong_guessTitle">Oh No!</string>
+    <string name="right_guessMsg">You guessed correctly!</string>
+    <string name="wrong_guessMsg">Better luck next time!</string>
+    <string name="backWarning_title">Are you sure?</string>
+    <string name="backWarning_msg">If you navigate back you\'ll loose all progress in this game. Do you want to go back?</string>
+    <string name="thanks">Thanks For Playing!</string>
+    <string name="congrats">Congratulations %1$s you got %2$d questions right!</string>
+    <string name="display_score">Score: %1$d</string>
+    <string name="display_remain">Remaining: %1$d</string>
+    <string name="how_to_play">How to Play:</string>
+    <string name="help_text">
+        The point of the game is to guess the name of the scientist who\'s photo is displayed.\n\nPress
+        the name of who you think it is!\n\nIf
+        you\'d like to know what this person is famous for, click on Hint :)\n\nHave Fun!!
+    </string>
+    <string name="about_title">About this App:</string>
+    <string name="about_text">
+        This is a fun trivia app developed and implemented by Bradley Killins.\n\nThis
+        is Assignment 2 for\nSODV3203: Mobile Application Development
+    </string>
+    <string name="score_filler">Score: X</string>
+    <string name="remaining_filler">Remaining: X</string>
 
 </resources>
